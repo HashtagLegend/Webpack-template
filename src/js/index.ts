@@ -1,12 +1,24 @@
-interface Person {
-    firstName: string;
-    lastName: string;
+let bilKnap: HTMLElement = document.getElementById("bilKnap")
+let elBilKnap: HTMLElement = document.getElementById("elBilKnap")
+let inputValue = document.getElementById("bilPris")
+
+bilKnap.addEventListener("click", bilAfgift)
+elBilKnap.addEventListener("click", elBilAfgift)
+
+let afgift1  = 85;
+let afgift2 = 150;
+let  fradrag = 130000;
+let eBilAfgift = 20;
+
+function bilAfgift() {
+    let input = (<HTMLElement>inputValue).nodeType
+            if (input <= 200000) {
+        return console.log((input*afgift1)/100)
+
+            
+    }
 }
 
-function greeter(person: Person): string {
-    return "Hello, " + person.firstName + " " + person.lastName;
+function elBilAfgift():void {
+    
 }
-let user: Person = { firstName: "John", lastName: "Doe" };
-
-let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-element.innerHTML = greeter(user);
